@@ -1,13 +1,15 @@
 <?php require_once("private/conexao.php"); ?>
 
 <?php 
-$consulta_livros = 'SELECT l.imagem,l.titulo, l.autor,g.nome,e.nome,t.nome,l.preco,l.paginas,l.idioma,l.descricao FROM livros l INNER JOIN genero g ON l.id_genero = g.idgenero INNER JOIN editora e ON l.id_editora = e.ideditora INNER JOIN tipo t ON l.id_tipo = t.idtipo;' ;
+    setlocale(LC_ALL, 'pt_BR');
 
-$todos_livros = mysqli_query($conecta, $consulta_livros);
+    $consulta_livros = 'SELECT l.idlivros,l.imagem,l.titulo, l.autor,g.nome,e.nome,t.nome,l.preco,l.paginas,l.idioma,l.descricao FROM livros l INNER JOIN genero g ON l.id_genero = g.idgenero INNER JOIN editora e ON l.id_editora = e.ideditora INNER JOIN tipo t ON l.id_tipo = t.idtipo;' ;
 
-if (!$todos_livros){
-    die("Falha na consulta ao banco de dados");
-}
+    $todos_livros = mysqli_query($conecta, $consulta_livros);
+
+    if (!$todos_livros){
+        die("Falha na consulta ao banco de dados");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +37,17 @@ if (!$todos_livros){
             <?php while ($lista = mysqli_fetch_assoc($todos_livros)){ //atenção ao fechamento da chave ?>
 
             <!--Organização dos dados em formato de lista-->
+           
             <div class="caixa">
                 <ul>
-                    <li >
-                        <img class="imagem" src="<?php echo $lista['imagem']?>" >
+               
+                    <li>
+                        <img class="imagem_livro" src="<?php echo $lista['imagem']?>" >
                     </li>
                     <li>
-                        <h4><?php echo $lista['titulo'] ?></h4>
+                        <a href="livro.php?codigo=<?php echo $lista['idlivros'];?>">
+                            <h4><?php echo $lista['titulo'] ?></h4>
+                        </a>
                     </li>
                     <li> 
                         Autor(a): <?php echo $lista['autor'] ?>
@@ -49,8 +55,10 @@ if (!$todos_livros){
                     <li>
                         Preço: <?php echo $lista['preco'] ?>
                     </li>
+                
                 </ul>
             </div>
+            
             <?php
             }
             ?>
