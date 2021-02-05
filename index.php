@@ -16,11 +16,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link href="css\style.css" rel="stylesheet">
+    <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    
 
-    <link href="css/mycss/style.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     
 
     <title>Consulta de Livros</title>
@@ -38,25 +39,36 @@
 
             <!--Organização dos dados em formato de lista-->
            
-            <div class="caixa">
-                <ul>
-               
-                    <li>
-                        <img class="imagem_livro" src="<?php echo $lista['imagem']?>" >
-                    </li>
-                    <li>
-                        <a href="livro.php?codigo=<?php echo $lista['idlivros'];?>">
+            <div class="caixa_grande">
+                <div class="caixa_media">
+                    <ul>
+                        <li class="lista_livro">
+                            <img class="imagem_livro rounded mx-auto shadow-sm" src="<?php echo $lista['imagem']?>" >
+                        </li>
+                        <li>
                             <h4><?php echo $lista['titulo'] ?></h4>
-                        </a>
-                    </li>
-                    <li> 
-                        Autor(a): <?php echo $lista['autor'] ?>
-                    </li>
-                    <li>
-                        Preço: <?php echo $lista['preco'] ?>
-                    </li>
-                
-                </ul>
+                        </li>
+                        <li> 
+                            Autor(a): <?php echo $lista['autor'] ?>
+                        </li>
+                        <li>
+                            Preço: <?php echo $lista['preco'] ?>
+                        </li>
+                    </ul>
+                </div>
+                <div class="caixa_pequena">
+                    <ul>
+                       
+                        <li id="li_vermais">
+                            <a href="livro.php?codigo=<?php echo $lista['idlivros'];?>">
+                                <buttontype="button" id="bt_vermais"class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Ver mais
+                                </button>
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </div>
             </div>
             
             <?php
@@ -69,7 +81,7 @@
 
     </main>
 </body>
-<script src="js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 </html>
 
 <?php

@@ -1,0 +1,59 @@
+
+body{
+  background-color: rgb(234, 237, 237) !important; 
+}
+
+
+.imagem_livro{
+  width:200px;
+  height:300px; 
+}
+
+.lista_livro{
+  margin-bottom:20px;
+}
+
+ul{
+   list-style: none;
+}
+
+
+.caixa_grande{
+  float: left;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  width: 300px;
+  height:550px;
+  padding: 20px;
+  background-color: #ffff;
+  border-radius:5px;
+
+}
+
+
+.caixa_media{
+
+  height: 450px;
+}
+
+
+
+
+#li_vermais{
+  margin-top:20px;
+ 
+}
+
+
+#bt_vermais{
+  width: 200px !important; 
+  text-align: center;
+  background-color: dimgrey;
+  border:none;
+}
+
+
+h1{
+  text-align: center;
+}
+
