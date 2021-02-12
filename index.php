@@ -18,6 +18,8 @@
     <meta charset="UTF-8">
     <link href="css\style.css" rel="stylesheet">
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     
@@ -34,6 +36,7 @@
     <main>
         <div id = "todos_livros">
             <h2>Todos os livros</h2>
+            <hr>
             <!-- Array para busca dos livros -->
             <?php while ($lista = mysqli_fetch_assoc($todos_livros)){ //atenção ao fechamento da chave ?>
 
@@ -45,14 +48,16 @@
                         <li class="lista_livro">
                             <img class="imagem_livro rounded mx-auto shadow-sm" src="<?php echo $lista['imagem']?>" >
                         </li>
+                       
                         <li>
-                            <h4><?php echo $lista['titulo'] ?></h4>
+                            <h5><?php echo $lista['titulo'] ?></h5>
                         </li>
+                        <hr id="linha_card">
                         <li> 
-                            Autor(a): <?php echo $lista['autor'] ?>
+                            <b>Autor(a):</b> <?php echo $lista['autor'] ?>
                         </li>
                         <li>
-                            Preço: <?php echo $lista['preco'] ?>
+                        <b> Preço:</b> <?php echo $lista['preco'] ?>
                         </li>
                     </ul>
                 </div>

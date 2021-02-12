@@ -1,0 +1,95 @@
+
+*{
+    background-color: #faf9f9;
+}
+html, body {
+    margin: 0 auto;
+    padding: 0 auto;
+    height:100%;
+    background-color: #faf9f9 !important;
+    
+
+}
+
+
+header{
+    height: 100px;
+
+}
+
+main{
+    width: 80%;
+    height: 100%;
+    margin: auto; 
+}
+
+
+.img_detalhe{
+    width: 220px;
+    height: 250px;
+    box-shadow: 10px solid ;
+}
+
+.container_imagem{
+    float: left;
+    margin: 0 5% 2% 0;
+    
+    
+}
+.container_detalhes{
+    float:left;
+    width: 65%;
+    font-size: 20px;
+    
+}
+
+.painel{
+    background-color: red;
+    float:left;
+    width: 200px;
+    height: 300px;
+}
+
+#titulo{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left:10px;
+}
+.container_detalhes ul{
+    list-style: none;
+    padding: 0;
+}
+
+.container_detalhes ul li{
+    padding: 0 0 7px 0;
+}
+
+.container_descrição{
+
+    float:left;
+    margin: 5px 5px 20px 5px ;
+    padding: 0 auto;
+    
+    
+}
+footer{
+    height: 70px;
+    clear: both;
+    bottom: 0;          
+    width: 100%;
+    margin-top:20px;
+    
+}
+
+
+@media (max-width: 990px){
+    .container_imagem{
+        margin:0 30% 20px 30%;
+    }
+    .container_detalhes{
+        width: 100%;
+    }
+    .container_descrição{
+        font-size: 20px;
+    }
+}

@@ -1,16 +1,35 @@
 
-body{
-  background-color: rgb(234, 237, 237) !important; 
+/*INDEX*/
+
+main,body,h1,h2{
+  font-family: 'Lato', sans-serif !important;
 }
 
+body{
+  background-color: #f0ead2 !important; 
+  
+}
+
+#linha_card{
+  width:155px;
+}
+
+main{
+  background-color:red;
+    margin: 0 10% auto;
+    padding: 0 auto;
+    height: 1000px;
+    
+    
+}
 
 .imagem_livro{
-  width:200px;
-  height:300px; 
+  width:150px;
+  height:250px; 
 }
 
 .lista_livro{
-  margin-bottom:20px;
+  margin-bottom:15px;
 }
 
 ul{
@@ -20,11 +39,11 @@ ul{
 
 .caixa_grande{
   float: left;
-  margin-left: 100px;
-  margin-bottom: 20px;
-  width: 300px;
-  height:550px;
-  padding: 20px;
+  margin-top: 30px;
+  margin-left: 45px;
+  width: 215px;
+  height: 500px;
+  padding: 0 auto;
   background-color: #ffff;
   border-radius:5px;
 
@@ -32,10 +51,10 @@ ul{
 
 
 .caixa_media{
+  height: 400px;
+  margin-top:20px;
 
-  height: 450px;
 }
-
 
 
 
@@ -46,14 +65,20 @@ ul{
 
 
 #bt_vermais{
-  width: 200px !important; 
+  width: 150px !important; 
   text-align: center;
-  background-color: dimgrey;
+  background-color: #3d5a80;
   border:none;
+  
+}
+
+#bt_vermais:hover{
+  background-color: dimgrey;
 }
 
 
 h1{
   text-align: center;
 }
+
 

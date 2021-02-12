@@ -44,28 +44,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/mycss/style.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/livrostyle.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
+<body class="container">
+    <header>
 
-    <div class="box_livro">
-        <ul>
-            <li><img src="<?php echo $imagem ?>"> </li>
-            <li><h2><?php echo $titulo ?></h2></li>
-            <li>Autor: <?php echo $autor ?></li>
-            <li>Preço: R$<?php echo $preco ?></li>
-            <li>Gênero: <?php echo $genero ?></li>
-            <li>Editora: <?php echo $editora ?></li>
-            <li>Tipo: <?php echo $tipo ?></li>
-            <li>ISBN: <?php echo $isbn ?></li>
-            <li>Idioma <?php echo $idioma ?></li>
-            <li>Quantidade de páginas: <?php echo $paginas ?></li>
-            <li>Descrição: <?php echo $descricao ?></li>
-        </ul>
-    </div>
 
+  
+    </header>
+    <main class="container-fluid" >
+        <div id="titulo">
+            <h1><?php echo $titulo ?></h1>
+        </div>
+            <div class="container_imagem col">
+                <img class="img_detalhe img-fluid" src="<?php echo $imagem ?>">
+            </div>
+
+            <div class="container_detalhes col">
+                
+                <ul>
+                    <li>Autor: <?php echo $autor ?> </li>
+                    <li>Preço: R$<?php echo $preco ?> </li>
+                    <li>Gênero: <?php echo $genero ?></li>
+                    <li>Editora: <?php echo $editora ?> </li>
+                    <li>Tipo: <?php echo $tipo ?> </li>
+                    <li>ISBN: <?php echo $isbn ?> </li>
+                    <li>Idioma <?php echo $idioma ?> </li>
+                    <li>Quantidade de páginas: <?php echo $paginas ?> </li> 
+                </ul>
+            </div>
+        
+            
+        <article class="container_descrição col">
+            <p><?php echo $descricao ?></p>
+
+        </article>           
+            
+        
+    </main>
+    <footer>
+       
+    </footer>
 
 
 </body>

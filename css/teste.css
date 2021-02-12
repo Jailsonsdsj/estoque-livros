@@ -1,0 +1,52 @@
+html,body{
+    margin: 0 auto;
+    padding: 0 auto;
+    height:100%;
+}
+
+
+header{
+    height: 100px;
+    background-color: #e85d04;
+
+}
+
+main{
+    background-color: #f5cac3;
+    height: auto;
+    margin: 0 auto; 
+    
+}
+
+/*
+
+
+.img-livro{
+    background-color: #073b4c;
+    width: 500px;
+    height: 500px;
+
+}
+
+.detalhes{
+    background-color: #7f5539;
+    width: 500px;
+    height: 700px;
+
+}
+
+.descricao{
+    background-color: #560bad;
+    width: 300px;
+    height: 1200px;
+}
+*/
+
+footer{
+    height: 100px;
+    background-color: #81b29a;
+    clear: both;
+    
+    bottom: 0;          
+    width: 100%;
+}
