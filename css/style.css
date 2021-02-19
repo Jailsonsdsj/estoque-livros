@@ -1,3 +1,8 @@
+@font-face{
+  font-family: Pacifico-Regular;
+  src:"fonts/Pacifico-Regular.ttf";
+}
+
 
 /*INDEX*/
 
@@ -5,8 +10,92 @@ main,body,h1,h2{
   font-family: 'Lato', sans-serif !important;
 }
 
+.container-fluid{
+  margin: 0 auto;
+}
+
+/*HEADER*/
+header{
+  background-color:#293241;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#logo{
+  font-family: 'Pacifico', cursive !important;
+  color:#ffff;
+  margin: 0 0 0 5%;
+  text-decoration:none;
+  width: 100%;
+}
+
+#logo a{
+  text-decoration: none;
+  
+}
+
+header, .painel_usuario{
+  height: 60px;
+  
+}
+
+
+.painel_usuario{
+
+  margin:0 auto;
+  padding-top:15px;
+  display: inline-block;
+  margin-right: 20px;
+  
+}
+
+aside #nome_usuario{
+  float:left;
+  font-size: 18px;
+  color:#ffff;
+
+}
+
+aside #botao_sair{
+  padding-top: 3px;
+  text-align: center;
+  float:right;
+  background-color: #e85d04;
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  
+}
+
+aside a #botao_sair {
+  text-decoration:none;
+  color: #ffff;
+}
+
+aside #botao_sair:hover{
+  background-color: #98c1d9;
+  
+}
+
+#titulo{
+
+}
+
+#titulo h1{
+  text-align: center;
+}
+
+#nome_usuario{
+  margin-right:10px;
+  font-size: 20px;
+  
+}
+
+
 body{
-  background-color: #f0ead2 !important; 
+  background-color: #f1faee; 
   
 }
 
@@ -15,7 +104,7 @@ body{
 }
 
 main{
-  background-color:red;
+ 
     margin: 0 10% auto;
     padding: 0 auto;
     height: 1000px;
@@ -45,7 +134,7 @@ ul{
   height: 500px;
   padding: 0 auto;
   background-color: #ffff;
-  border-radius:5px;
+  
 
 }
 
@@ -77,8 +166,33 @@ ul{
 }
 
 
-h1{
-  text-align: center;
+
+.input-group{
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 20px;
+ 
+
+}
+
+.form-control{
+  height:40px;
+  width: 600px;
+  
+
+
+}
+
+.btn-outline-secondary{
+  background-color: #ee6c4d;
+  border-color: #ee6c4d;
+  color: #ffff;
+
 }
 
 
+.btn-outline-secondary:hover{
+  background-color: #98c1d9;
+  border-color: #98c1d9;
+
+}

@@ -1,10 +1,11 @@
 <?php require_once("private/conexao.php"); ?>
+<?php require_once("private/seguranca.php"); ?>
 <?php
     if (isset($_GET["codigo"])){
         $idlivros = $_GET["codigo"];
     
     }else{
-        header("location: index.php");
+        header("location: inicio.php");
 
     }
 
@@ -44,16 +45,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/livrostyle.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body class="container">
-    <header>
+<body>
+    <!--header-->
+    <?php include_once("_include/header.php"); ?>
 
-
-  
-    </header>
     <main class="container-fluid" >
         <div id="titulo">
             <h1><?php echo $titulo ?></h1>
