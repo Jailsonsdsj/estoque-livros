@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Fev-2021 às 23:21
+-- Tempo de geração: 27-Fev-2021 às 22:42
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.26
 
@@ -175,6 +175,29 @@ INSERT INTO `tipo` (`idtipo`, `nome`) VALUES
 (1, 'Capa Comum'),
 (2, 'Capa Dura');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `idusuario` int(11) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `tipo` enum('admin','user') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`idusuario`, `nome`, `usuario`, `senha`, `tipo`) VALUES
+(1, 'Adilson', 'ads', '123', 'admin'),
+(2, 'Franklinelson', 'Frank', 'gabi', 'admin'),
+(3, 'zac', 'zac', 'zac', 'admin');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -205,6 +228,12 @@ ALTER TABLE `tipo`
   ADD PRIMARY KEY (`idtipo`);
 
 --
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idusuario`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -231,6 +260,12 @@ ALTER TABLE `livros`
 --
 ALTER TABLE `tipo`
   MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para despejos de tabelas
