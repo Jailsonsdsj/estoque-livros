@@ -43,11 +43,13 @@ header, .painel_usuario{
 
 
 .painel_usuario{
-
   margin:0 auto;
-  padding-top:15px;
+  padding-top:5px;
   display: inline-block;
   margin-right: 20px;
+  text-align:right;
+  
+
   
 }
 
@@ -58,6 +60,13 @@ aside #nome_usuario{
 
 }
 
+
+aside a#configuracoes, a#meu_perfil{
+  color: #ffff;
+  font-size: 14px;
+  
+}
+
 aside #botao_sair{
   padding-top: 3px;
   text-align: center;
@@ -66,6 +75,8 @@ aside #botao_sair{
   width: 80px;
   height: 30px;
   border-radius: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
   
 }
 
@@ -79,9 +90,7 @@ aside #botao_sair:hover{
   
 }
 
-#titulo{
 
-}
 
 #titulo h1{
   text-align: center;
@@ -94,6 +103,7 @@ aside #botao_sair:hover{
 }
 
 
+/*INICIO*/
 body{
   background-color: #f1faee; 
   
@@ -146,12 +156,10 @@ ul{
 }
 
 
-
 #li_vermais{
   margin-top:20px;
  
 }
-
 
 #bt_vermais{
   width: 150px !important; 
@@ -166,7 +174,6 @@ ul{
 }
 
 
-
 .input-group{
   width: 60%;
   margin: 0 auto;
@@ -178,8 +185,6 @@ ul{
 .form-control{
   height:40px;
   width: 600px;
-  
-
 
 }
 
@@ -190,9 +195,136 @@ ul{
 
 }
 
-
 .btn-outline-secondary:hover{
   background-color: #98c1d9;
   border-color: #98c1d9;
 
+}
+
+/*PAINEL DO ADMINISTRADOR*/
+.container_configuracoes{
+  height:100%;
+  padding: 0 2%;
+}
+
+div#titulo_configuracoes{
+  margin-top:30px;
+  text-align:center;
+  margin-bottom:30px;
+}
+
+
+div.painel_configuracoes{
+  background-color:#ffff;
+  display:block;
+  float: left;
+  border-color: #1d3557;
+  border-style: solid;
+  border-radius: 15px;
+  padding: 10px;
+  border-width: 1px;
+  
+
+}
+
+
+/*TELA DE CADASTRO DE LIVROS*/
+#cadastro-livro{
+  padding: 20px;
+  margin:20px auto;
+  position: relative;
+  background-color:#ffff;
+  border-radius: 20px;
+  max-width: 650px;
+  
+}
+
+.form-label{
+  font-size:20px;  
+  margin-bottom: -10px;
+  
+}
+
+div textarea#descricao-livro{
+  height:100px;
+  padding: 0 auto;
+  
+
+}
+
+.largura-formulario{
+  width: 100px;
+}
+
+
+
+.coluna{
+  display: flex;
+}
+
+.coluna #campo1{
+  width: 60%;
+  margin-right:50px;
+}
+
+.coluna #campo2{
+  width: 30%;
+}
+.coluna div#campo1 input#autor-livro{
+  width: 100%;
+}
+
+#div-titulo-livro,
+#titulo-livro,
+#descricao-livro, 
+#enviar-capa, 
+.coluna div#campo2 input#preco-livro{
+  width: 100%;
+}
+ 
+
+.coluna #campo3{
+  width: 60%;
+  margin-left:25px;
+}
+
+.coluna #campo3{
+  width: 50%;
+ 
+}
+
+.coluna #campo4{
+  width: 90%;
+}
+
+
+.coluna div input#paginas-livro,
+.coluna div input#isbn-livro{
+  width: 95%;
+
+}
+#estoque-livro{
+  width: 70%;
+  
+}
+#enviar-capa{
+  height: 38px;
+}
+#campo5{
+  width: 35%;
+  margin-right:40px;
+}
+#campo6{
+  width:100%;
+}
+
+/*BOTOES DO SITE*/
+.cor-botao{
+  background-color: #ee6c4d;
+  border-color: #ee6c4d;
+  color: #ffff;
+}
+
+.cor-botao:hover{
+  background-color: #98c1d9;
 }

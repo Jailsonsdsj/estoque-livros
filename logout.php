@@ -23,7 +23,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Você saiu do site, bebê</h1>
+    <h1> Você saiu do site.</h1>
 
     <h3> <a href="login.php">Fazer login novamente </a> <h3>
 </body>
