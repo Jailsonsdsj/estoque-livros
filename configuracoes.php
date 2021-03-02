@@ -32,8 +32,8 @@
             <div class="painel_configuracoes">
                 <h4> Configurações dos Livros</h4>
                 <ul>
-                    <li><a href="cadastro-livro.php"> Cadastrar Livro</a></li>
                     <li><a href="#">Alterar Informações</a></li>
+                    <li><a href="cadastro-livro.php"> Cadastrar Livro</a></li>
                     <li><a href="#">Excluir Livro</a></li>
                 </ul>
             </div>

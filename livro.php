@@ -45,44 +45,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title><?php echo $titulo ?> | Livraria Estante</title>
 </head>
 <body>
     <!--header-->
     <?php include_once("_include/header.php"); ?>
 
-    <main class="container-fluid" >
-        <div id="titulo">
-            <h1><?php echo $titulo ?></h1>
-        </div>
-            <div class="container_imagem col">
-                <img class="img_detalhe img-fluid" src="<?php echo $imagem ?>">
-            </div>
-
-            <div class="container_detalhes col">
-                
-                <ul>
-                    <li>Autor: <?php echo $autor ?> </li>
-                    <li>Preço: R$<?php echo $preco ?> </li>
-                    <li>Gênero: <?php echo $genero ?></li>
-                    <li>Editora: <?php echo $editora ?> </li>
-                    <li>Tipo: <?php echo $tipo ?> </li>
-                    <li>ISBN: <?php echo $isbn ?> </li>
-                    <li>Idioma <?php echo $idioma ?> </li>
-                    <li>Quantidade de páginas: <?php echo $paginas ?> </li> 
-                </ul>
-            </div>
+    <main id="main-livro" class="container-fluid">
+    
+        <div class="caixa-detalhe row row-cols-1 row-cols-md-3 mb-3">
         
+            <div class=" container_imagem col">
+            <div id="alteracao-livro"><p>
+                <a href="alterar-livro.php?codigo=<?php echo $idlivros ?>">Alterar Informações</a> |
+                <a href="#">Excluir Livro</a> 
             
-        <article class="container_descrição col">
-            <p><?php echo $descricao ?></p>
-
-        </article>           
+                </div>
+                <img class="img-fluid " src="<?php echo $imagem ?>">
+                </p></div>
+        
+            <div class="container_detalhes col">
             
+                <div id="blocoA"> 
+                    <ul>
+                        <li><h2><?php echo $titulo ?></h2></li>
+                        <hr style="width:93%">
+                        <li>Autor(a): <?php echo $autor ?> </li>
+                        <li>R$ <?php echo $preco ?> </li>
+                        
+                    </ul>
+                </div>
+                <div id="blocoB">
+                    <ul>
+                        <li>Gênero: <?php echo $genero ?></li>
+                        <li>Editora: <?php echo $editora ?> </li>
+                        <li>Tipo: <?php echo $tipo ?> </li>
+                        <li>ISBN: <?php echo $isbn ?> </li>
+                        <li>Idioma: <?php echo $idioma ?> </li>
+                        <li>Quantidade de páginas: <?php echo $paginas ?> </li> 
+                        <!--ADM-->
+                        <li hidden>Estoque: <?php echo $estoque ?> </li>
+                        <li><input id= "botao-carrinho" type="button" class="btn btn-primary " value="Adicionar ao carrinho"></button></li>
+                    </ul>
+                </div>  
+            </div>
+           
+            <div class="container_descricao col border border-1 overflow-auto">
+                <p><?php echo $descricao ?></p>
+               
+            </div>             
+        </div>  
         
     </main>
     <footer>
