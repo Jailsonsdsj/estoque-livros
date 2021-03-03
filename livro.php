@@ -9,11 +9,12 @@
 
     }
 
-    $consulta_livros = 'SELECT l.idlivros,l.imagem,l.titulo, l.autor,g.nome as "genero",e.nome as "editora",t.nome as "tipo",l.preco,l.paginas,l.idioma,l.descricao,l.isbn,l.estoque ';
+    $consulta_livros = 'SELECT l.idlivros,l.imagem,l.titulo, l.autor,g.nome as "genero",e.nome as "editora",t.nome as "tipo",l.preco,l.paginas,i.idioma,l.descricao,l.isbn,l.estoque ';
     $consulta_livros .= ' FROM livros l ';
     $consulta_livros .= ' INNER JOIN genero g ON l.id_genero = g.idgenero ';
     $consulta_livros .= ' INNER JOIN editora e ON l.id_editora = e.ideditora ';
     $consulta_livros .= ' INNER JOIN tipo t ON l.id_tipo = t.idtipo ';
+    $consulta_livros .= ' INNER JOIN idiomas i ON l.id_tipo = i.ididioma ';
     $consulta_livros .= " WHERE idlivros = {$idlivros}";
 
     $livros = mysqli_query($conecta, $consulta_livros);
@@ -59,7 +60,7 @@
         <div class="caixa-detalhe row row-cols-1 row-cols-md-3 mb-3">
         
             <div class=" container_imagem col">
-            <div id="alteracao-livro"><p>
+            <div id="alteracao-livro" class="btn-primary"><p>
                 <a href="alterar-livro.php?codigo=<?php echo $idlivros ?>">Alterar Informações</a> |
                 <a href="#">Excluir Livro</a> 
             

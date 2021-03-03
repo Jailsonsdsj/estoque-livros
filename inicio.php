@@ -4,7 +4,8 @@
 <?php 
     setlocale(LC_ALL, 'pt_BR');
 
-     $consulta_livros = "SELECT l.idlivros,l.imagem,l.titulo, l.autor,g.nome,e.nome,t.nome,l.preco,l.paginas,l.idioma,l.descricao FROM livros l INNER JOIN genero g ON l.id_genero = g.idgenero INNER JOIN editora e ON l.id_editora = e.ideditora INNER JOIN tipo t ON l.id_tipo = t.idtipo " ;
+     $consulta_livros = "SELECT l.idlivros,l.imagem,l.titulo, l.autor,g.nome,e.nome,t.nome,l.preco,l.paginas,i.idioma,l.descricao FROM livros l INNER JOIN genero g ON l.id_genero = g.idgenero 
+     INNER JOIN idiomas i ON l.id_idioma = i.ididioma INNER JOIN editora e ON l.id_editora = e.ideditora INNER JOIN tipo t ON l.id_tipo = t.idtipo " ;
   
     //pesquisa por filtro
     if (isset($_GET['pesquisa_livro'])){

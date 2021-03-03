@@ -21,4 +21,11 @@
         die("Falha ao consultar a lista de tipos");
     }
 
+     //SELECT PARA IDIOMAS
+     $tipo = "SELECT * FROM idiomas";
+     $lista_tipo=mysqli_query($conecta,$tipo);
+     if (!$lista_tipo){
+         die("Falha ao consultar a lista de tipos");
+     }
+
 ?>
