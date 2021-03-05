@@ -40,6 +40,7 @@
         <title>Curso PHP Integração com MySQL</title>
         
         <!-- estilo -->
+        <link href="uikit\css\uikit.css" rel="stylesheet">
         <link href="css/login.css" rel="stylesheet">
 
     </head>
@@ -70,6 +71,13 @@
  
     </body>
 </html>
+
+
+<script src="uikit\js\uikit.min.js"></script>
+<script src="uikit\js\uikit.js"></script>
+<script src="uikit\js\uikit-icons.js"></script>
+<script src="uikit\js\uikit-icons.min.js"></script>
+
 <?php
     // Fechar conexao
     mysqli_close($conecta);

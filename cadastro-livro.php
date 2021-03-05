@@ -17,9 +17,10 @@
         $estoque    = $_POST["estoque-livro"];
         $capa       = $_POST["enviar-capa"];
         $descricao  = $_POST["descricao-livro"];
+        $amazon     = $_POST["link-amazon"];
 
         //INSERINDO DADOS NO BD
-        $cadastro_livros =  "INSERT INTO livros (idlivros,titulo,autor,id_genero,id_editora,id_tipo,isbn,preco,estoque,descricao,imagem,idioma,paginas) VALUES (null,'$titulo','$autor',$genero,$editora,$tipo,'$isbn','$preco','$estoque','$descricao','$capa','$idioma','$paginas')";
+        $cadastro_livros =  "INSERT INTO livros (idlivros,titulo,autor,id_genero,id_editora,id_tipo,isbn,preco,estoque,descricao,imagem,id_idioma,paginas,amazon) VALUES (null,'$titulo','$autor',$genero,$editora,$tipo,'$isbn','$preco','$estoque','$descricao','$capa','$idioma','$paginas','$amazon')";
 
         $operacao_inserir = mysqli_query($conecta,$cadastro_livros);
         if (!$operacao_inserir){
@@ -37,6 +38,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link href="uikit\css\uikit.css" rel="stylesheet">
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
     <link href="css\style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -139,9 +141,15 @@
                     <label for="idioma-livro" class="form-label"><p>Idioma:</p></label>
                     <select name="idioma-livro" class="form-select">
                         <option selected></option>
-                        <option value="Português">Português</option>
-                        <option value="Inglês">Inglês</option>
-                        <option value="Espanhol">Espanhol</option>
+                        <?php
+                            while($idioma_livro = mysqli_fetch_assoc($lista_idioma)){
+                        ?>
+                            <option value="<?php echo $idioma_livro["ididioma"];?>">
+                                <?php echo $idioma_livro["idioma"];?>
+                            </option>
+                        <?php
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="coluna">
@@ -173,6 +181,10 @@
                         <input id="enviar-capa" name="enviar-capa" class="form-control " type="text" id="formFile">
                     </div>
                 </div>
+                <div class="mb-3" id="div-link-amazon">
+                    <label for="link-amazon" class="form-label"><p>Link do livro na Amazon:</p></label>
+                    <input type="text" name="link-amazon" id="link-amazon"  class="form-control">
+                </div>
                <div class="mb-3">
                     <label for="descricao-livro" class="form-label"><p>Descrição:</p></label>
                     <textarea id="descricao-livro" name="descricao-livro" class="form-control" type="text" maxlength="500"> </textarea>
@@ -188,6 +200,11 @@
 </body>
 </html>
 
+
+<script src="uikit\js\uikit.min.js"></script>
+<script src="uikit\js\uikit.js"></script>
+<script src="uikit\js\uikit-icons.js"></script>
+<script src="uikit\js\uikit-icons.min.js"></script>
 
 <?php
     mysqli_close($conecta);

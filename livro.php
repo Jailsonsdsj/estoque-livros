@@ -9,7 +9,7 @@
 
     }
 
-    $consulta_livros = 'SELECT l.idlivros,l.imagem,l.titulo, l.autor,g.nome as "genero",e.nome as "editora",t.nome as "tipo",l.preco,l.paginas,i.idioma,l.descricao,l.isbn,l.estoque ';
+    $consulta_livros = 'SELECT l.idlivros,l.imagem,l.titulo, l.autor,g.nome as "genero",e.nome as "editora",t.nome as "tipo",l.preco,l.paginas,i.idioma,l.descricao,l.isbn,l.estoque,l.amazon';
     $consulta_livros .= ' FROM livros l ';
     $consulta_livros .= ' INNER JOIN genero g ON l.id_genero = g.idgenero ';
     $consulta_livros .= ' INNER JOIN editora e ON l.id_editora = e.ideditora ';
@@ -37,15 +37,17 @@
         $imagem = $livros_detalhe['imagem'];
         $idioma = $livros_detalhe['idioma'];
         $paginas = $livros_detalhe['paginas'];
+        $link_amazon = $livros_detalhe['amazon'];
     }
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="uikit\css\uikit.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     
@@ -60,10 +62,12 @@
         <div class="caixa-detalhe row row-cols-1 row-cols-md-3 mb-3">
         
             <div class=" container_imagem col">
-            <div id="alteracao-livro" class="btn-primary"><p>
+            <div id="alteracao-livro" method="post"><p>
                 <a href="alterar-livro.php?codigo=<?php echo $idlivros ?>">Alterar Informações</a> |
-                <a href="#">Excluir Livro</a> 
-            
+                <a id="exclusao-livro" href="livro.php?codigo=<?php echo $idlivros ?>" >Excluir Livro </a>
+
+                
+                
                 </div>
                 <img class="img-fluid " src="<?php echo $imagem ?>">
                 </p></div>
@@ -89,7 +93,8 @@
                         <li>Quantidade de páginas: <?php echo $paginas ?> </li> 
                         <!--ADM-->
                         <li hidden>Estoque: <?php echo $estoque ?> </li>
-                        <li><input id= "botao-carrinho" type="button" class="btn btn-primary " value="Adicionar ao carrinho"></button></li>
+                        <li><a href="<?php echo $link_amazon ?>" target="_blank"> <input id= "botao-carrinho" type="button" class="btn btn-primary " value="Comprar"></span> </input></a></li>
+                        
                     </ul>
                 </div>  
             </div>
@@ -108,3 +113,13 @@
 
 </body>
 </html>
+
+
+<script src="uikit\js\uikit.min.js"></script>
+<script src="uikit\js\uikit.js"></script>
+<script src="uikit\js\uikit-icons.js"></script>
+<script src="uikit\js\uikit-icons.min.js"></script>
+
+<?php
+    mysqli_close($conecta);
+?>

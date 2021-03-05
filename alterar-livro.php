@@ -3,8 +3,9 @@
 <!--SELECTS-->
 <?php require_once("_include/selects.php");?>
 <?php
-   
+     
 
+    //SELECT PARA AS INFORMAÇÕES CADASTRADAS
     $info = "SELECT * FROM livros ";
     if (isset($_GET["codigo"])){
         $id_alteracao = $_GET["codigo"];
@@ -33,6 +34,7 @@
         $paginas    = $_POST["paginas-livro"];
         $estoque    = $_POST["estoque-livro"];
         $capa       = $_POST["enviar-capa"];
+        $amazon     = $_POST["link-amazon"];
         $descricao  = $_POST["descricao-livro"];
         $lId         = $_POST["livroId"];
 
@@ -44,11 +46,12 @@
         $alterar .= " id_genero        = {$genero},";
         $alterar .= " id_editora       = {$editora},";
         $alterar .= " id_tipo          = {$tipo},";
-        $alterar .= " idioma        = '{$idioma}',";
+        $alterar .= " id_idioma        = '{$idioma}',";
         $alterar .= " isbn          = '{$isbn}',";
         $alterar .= " paginas       = '{$paginas}',";
         $alterar .= " estoque       = {$estoque},";
         $alterar .= " imagem          = '{$capa}',";
+        $alterar .= " amazon          = '{$amazon}',";
         $alterar .= " descricao     = '{$descricao}' ";
         $alterar .= " WHERE ";
         $alterar .= " idlivros = {$lId}";
@@ -69,6 +72,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link href="uikit\css\uikit.css" rel="stylesheet">
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
     <link href="css\style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -93,7 +97,7 @@
     <?php include_once("_include/header.php"); ?>
 
     <main class= "container-fluid">
-        <div id="titulo_configuracoes">
+        <div class="titulo-central">
             <h1>Alterar Livro</h1>
         </div>
         
@@ -123,17 +127,24 @@
                     <label for="genero-livro" class="form-label"><p>Gênero:</p></label>
                     <select name="genero-livro" class="form-select">
                         <?php 
+                            $genero_atual = $dados_livro["id_genero"];
+                            
                             while($generos = mysqli_fetch_assoc($lista_genero)){
                                 $genero_antigo = $generos["idgenero"];
-                                $genero_atual = $dados_livro["id_genero"];
+                                
                                 if ($genero_atual == $genero_antigo){     
                         ?>
+                            <option  value="<?php echo $generos["idgenero"];?>" selected>
+                                <?php echo $generos["nome"];?>
+                            </option>
+
+                        <?php
+                            }else{
+                        ?>   
                             <option value="<?php echo $generos["idgenero"];?>">
                                 <?php echo $generos["nome"];?>
                             </option>
                         <?php
-                            }else{
-
                             }
                         }
                         ?>
@@ -151,11 +162,17 @@
 
                                
                         ?>
+                            <option selected value="<?php echo $editora_livros["ideditora"];?>">
+                                <?php echo $editora_livros["nome"];?>
+                            </option>
+                            <?php
+                            }else{
+                        ?>   
                             <option value="<?php echo $editora_livros["ideditora"];?>">
                                 <?php echo $editora_livros["nome"];?>
                             </option>
                         <?php
-                                }
+                            }
                         }
                         ?>
                     </select>
@@ -172,21 +189,49 @@
                                 if ( $tipo_antigo==$tipo_novo ){
                                     
                         ?>
+                            <option selected value="<?php echo $tipo_livro["idtipo"];?>">
+                                <?php echo $tipo_livro["nome"];?>
+                            </option>
+                            <?php
+                            }else{
+                        ?>   
                             <option value="<?php echo $tipo_livro["idtipo"];?>">
                                 <?php echo $tipo_livro["nome"];?>
                             </option>
                         <?php
-                            } 
+                            }
                         }
                         ?>
                     </select>
                 </div>
-                <!--ADICIONAR COLUNA IDIOMAS NO BANCO DE DADOS POSTERIORMENTE-->            
+                     
                 <div class="mb-3">
                     <label for="idioma-livro" class="form-label"><p>Idioma:</p></label>
                     <select name="idioma-livro" class="form-select">
-                        <option selected value="<?php $dados_livro["idioma"];?>"><?php echo $dados_livro["idioma"];?></option>                 
+                    <?php 
+                            while($idioma_livro = mysqli_fetch_assoc($lista_idioma)){
+                                $idioma_antigo = $idioma_livro["ididioma"];
+                                $idioma_novo = $dados_livro["id_idioma"];
+                                if ( $idioma_antigo==$idioma_novo ){
+                                    
+                        ?>
+                            <option selected value="<?php echo $idioma_livro["ididioma"];?>">
+                                <?php echo $idioma_livro["idioma"];?>
+                            </option>
+                            <?php
+                            }else{
+                        ?>   
+                            <option value="<?php echo $idioma_livro["ididioma"];?>">
+                                <?php echo $idioma_livro["idioma"];?>
+                            </option>
+                        <?php
+                            }
+                        }
+                        ?>                 
                     </select>
+
+
+
                 </div>
                 <div class="coluna">
                     <div class="mb-3" id="campo4"> 
@@ -219,9 +264,13 @@
                         <input id="enviar-capa" name="enviar-capa" class="form-control " type="text" id="formFile" value="<?php echo $dados_livro["imagem"];?>">
                     </div>
                 </div>
+                <div class="mb-3" id="div-link-amazon">
+                    <label for="link-amazon" class="form-label"><p>Link do livro na Amazon:</p></label>
+                    <input type="text" name="link-amazon" id="link-amazon"  class="form-control" value="<?php echo $dados_livro["imagem"];?>">
+                </div>
                <div class="mb-3">
                     <label for="descricao-livro" class="form-label"><p>Descrição:</p></label>
-                    <textarea id="descricao-livro" name="descricao-livro" class="form-control" type="text" maxlength="10000" value="<?php echo $dados_livro["descricao"];?>"> </textarea>
+                    <textarea id="descricao-livro" name="descricao-livro" class="form-control" type="text" maxlength="10000" value=""><?php echo $dados_livro["descricao"];?> </textarea>
                 </div>
 
                 <input type="submit" name="Alterar" value="Alterar" class="btn btn-outline-secondary " id="botao-cadastrar" style="margin-top:20px;" ></input>
@@ -237,6 +286,10 @@
 </body>
 </html>
 
+<script src="uikit\js\uikit.min.js"></script>
+<script src="uikit\js\uikit.js"></script>
+<script src="uikit\js\uikit-icons.js"></script>
+<script src="uikit\js\uikit-icons.min.js"></script>
 
 <?php
     mysqli_close($conecta);

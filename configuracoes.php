@@ -10,6 +10,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link href="uikit\css\uikit.css" rel="stylesheet">
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
     <link href="css\style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -33,8 +34,8 @@
                 <h4> Configurações dos Livros</h4>
                 <ul>
                     <li><a href="#">Alterar Informações</a></li>
-                    <li><a href="cadastro-livro.php"> Cadastrar Livro</a></li>
-                    <li><a href="#">Excluir Livro</a></li>
+                    <li><a href="cadastro-livro.php">Cadastrar Livro</a></li>
+                    <li><a href="todos-livros.php">Todos os Livros</a></li>
                 </ul>
             </div>
             <div>
@@ -46,6 +47,11 @@
 </body>
 </html>
 
+
+<script src="uikit\js\uikit.min.js"></script>
+<script src="uikit\js\uikit.js"></script>
+<script src="uikit\js\uikit-icons.js"></script>
+<script src="uikit\js\uikit-icons.min.js"></script>
 
 <?php
     mysqli_close($conecta);

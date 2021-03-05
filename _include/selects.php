@@ -1,4 +1,5 @@
 <?php
+  
     //SELECT PARA GÊNERO
     $genero = "SELECT idgenero, nome FROM genero ORDER BY nome ASC";
     $lista_genero = mysqli_query($conecta,$genero);
@@ -22,10 +23,10 @@
     }
 
      //SELECT PARA IDIOMAS
-     $tipo = "SELECT * FROM idiomas";
-     $lista_tipo=mysqli_query($conecta,$tipo);
-     if (!$lista_tipo){
-         die("Falha ao consultar a lista de tipos");
+     $idioma = "SELECT * FROM idiomas";
+     $lista_idioma=mysqli_query($conecta,$idioma);
+     if (!$lista_idioma){
+         die("Falha ao consultar a lista de idiomas");
      }
 
 ?>

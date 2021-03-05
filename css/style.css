@@ -189,7 +189,7 @@ ul{
   padding: 0 2%;
 }
 
-div#titulo_configuracoes{
+div.titulo-central{
   margin-top:30px;
   text-align:center;
   margin-bottom:30px;
@@ -367,7 +367,9 @@ div textarea#descricao-livro{
 
 #div-titulo-livro,
 #titulo-livro,
-#descricao-livro, 
+#descricao-livro,
+#div-link-amazon, 
+#link-amazon,
 #enviar-capa, 
 .coluna div#campo2 input#preco-livro{
   width: 100%;
@@ -407,6 +409,57 @@ div textarea#descricao-livro{
 }
 #campo6{
   width:100%;
+}
+
+/*TELA TODOS-LIVROS.PHP */
+
+#caixa-lista{
+  background-color:#ffff;
+  padding: 2%;
+  margin: 5% 0;
+
+}
+
+#lista-livros{
+  margin-top: 5%; 
+}
+
+#linha-tabela{
+  font-size:12px;
+}
+#lista-livros #coluna-titulo{
+  width:5px;
+  
+}
+
+#lista-livros #linha-titulo a, 
+#lista-livros #linha-autor a{
+  text-decoration: none;
+  color:black;
+  word-break: break-word;
+}
+
+#coluna-tabela{
+  width: 100%;
+}
+
+#coluna-id{
+ width: 2%;
+}
+
+#coluna-titulo{
+  width: 50%;
+}
+#coluna-autor{
+  width: 30%;
+}
+
+#coluna-alterar,#coluna-excluir{
+  width: 5%;
+}
+
+div a#cancelar-exclusao{
+  text-decoration:none;
 }
 
 /*BOTOES DO SITE*/

@@ -10,7 +10,7 @@
     //pesquisa por filtro
     if (isset($_GET['pesquisa_livro'])){
         $pequisa_livros = $_GET["pesquisa_livro"];
-        $consulta_livros .= " WHERE l.titulo LIKE '%{$pequisa_livros}%' ";
+        $consulta_livros .= " WHERE l.titulo LIKE '%{$pequisa_livros}%' or l.autor LIKE '%{$pequisa_livros}%' ";
     }
     //fim da peqsuisa por filtro
 
@@ -25,6 +25,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link href="uikit\css\uikit.css" rel="stylesheet">
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
     <link href="css\style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -42,11 +43,12 @@
     <?php include_once("_include/header.php"); ?>
     
     <main class= "container-fluid">
+    
         <div id="titulo">
             <h1> Consulta de Livros </h1>
         </div>
         <form action="inicio.php" method="get" class="input-group mb-3" >
-            <input type="text" class="form-control" name="pesquisa_livro" placeholder="Pesquisar Livros" aria-label="Pesquisar Livros" aria-describedby="button-addon2">
+            <input type="text" class="form-control" name="pesquisa_livro" placeholder="Pesquisar Livros ou Autores" aria-label="Pesquisar Livros" aria-describedby="button-addon2">
             <button type="input" name="botao" class="btn btn-outline-secondary" id="button-addon2" >Pesquisar</button>
         </form>
     
@@ -106,6 +108,10 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </html>
 
+<script src="uikit\js\uikit.min.js"></script>
+<script src="uikit\js\uikit.js"></script>
+<script src="uikit\js\uikit-icons.js"></script>
+<script src="uikit\js\uikit-icons.min.js"></script>
 <?php
     mysqli_close($conecta);
 ?>
