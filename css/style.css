@@ -98,115 +98,73 @@ aside #botao_sair:hover{
 
 
 /*INICIO*/
+
 body{
-  background-color: #f1faee !important; 
+  background-color: #f1faee;
+}
+
+.principal{
+  background-color:#f1faee;
   
 }
 
-#linha_card{
-  width:155px;
-}
-
-main{
-    margin: 0 10% auto;
-    padding: 0 auto;
-    height: 1000px;
-    
-    
-}
-
-.imagem_livro{
-  width:150px;
-  height:250px; 
-}
-
-.lista_livro{
-  margin-bottom:15px;
-}
-
-ul{
-   list-style: none;
-}
-
-
-.caixa_grande{
-  float: left;
-  margin-top: 30px;
-  margin-left: 45px;
-  width: 215px;
-  height: 500px;
-  padding: 0 auto;
-  background-color: #ffff;
-  
-
-}
-
-.caixa_media{
-  height: 400px;
-  margin-top:20px;
-}
-
-#li_vermais{
-  margin-top:20px;
- 
-}
-
-#bt_vermais{
-  width: 150px; 
-  text-align: center;
-  border:none;
-}
-
-
-.input-group{
+.barra-pesquisa{
   width: 60%;
   margin: 0 auto;
   padding-top: 20px;
 }
 
-.form-control{
-  height:40px;
-  width: 600px;
 
+.grupo-livros{
+  margin: 2%;   
+  
 }
 
-.btn-outline-secondary{
-  background-color: #ee6c4d;
-  border-color: #ee6c4d;
-  color: #ffff;
-
+.caixa-livro{
+  padding: 2%;
+  min-width: 150px;
+  min-height: 200px;
+  max-width: 15%;
+  max-height: 400px;
+  text-align: center;
+  margin: 1% 2%;
+  
 }
 
-.btn-outline-secondary:hover{
-  background-color: #98c1d9;
-  border-color: #98c1d9;
+
+@media(max-width: 366px){
+  .grupo-livros{
+    display: flex;
+    justify-content: center;
+  }
+  .caixa-livro{
+    margin-bottom:5%;
+  }
+
 
 }
 
 /*PAINEL DO ADMINISTRADOR*/
 .container_configuracoes{
-  height:100%;
+  height:auto;
   padding: 0 2%;
 }
 
-div.titulo-central{
-  margin-top:30px;
-  text-align:center;
-  margin-bottom:30px;
+
+
+.painel_configuracoes{
+  background-color:#ffff;
+  padding: 2%;
+  min-width: 150px;
+  min-height: 200px;
+  max-width: 350px;
+  max-height: 400px;
+  margin: 20px;
+
 }
 
-
-div.painel_configuracoes{
-  background-color:#ffff;
-  display:block;
-  float: left;
-  border-color: #1d3557;
-  border-style: solid;
-  border-radius: 15px;
-  padding: 10px;
-  border-width: 1px;
-  
-
+.titulo-painel-configuracoes{
+  margin-bottom:20px;
 }
 
 /*TELA DE DETALHES DO LIVRO*/
@@ -353,15 +311,15 @@ div textarea#descricao-livro{
   display: flex;
 }
 
-.coluna #campo1{
+.coluna .campo1{
   width: 60%;
   margin-right:50px;
 }
 
-.coluna #campo2{
+.coluna .campo2{
   width: 30%;
 }
-.coluna div#campo1 input#autor-livro{
+.coluna div.campo1 input#autor-livro{
   width: 100%;
 }
 
@@ -371,7 +329,7 @@ div textarea#descricao-livro{
 #div-link-amazon, 
 #link-amazon,
 #enviar-capa, 
-.coluna div#campo2 input#preco-livro{
+.coluna div.campo2 input#preco-livro{
   width: 100%;
 }
  
@@ -462,7 +420,22 @@ div a#cancelar-exclusao{
   text-decoration:none;
 }
 
-/*BOTOES DO SITE*/
+/*============== PADRÕES ==============*/
+
+
+.titulo-central{
+  margin-top:30px;
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.subtitulo{
+  font-size:30px;
+}
+
+
+
+/*BOTÃO PRIMÁRIO*/
 .btn-primary{
   background-color: #ee6c4d ;
   border-color: #ee6c4d ;
@@ -474,4 +447,21 @@ div a#cancelar-exclusao{
   border-color: #98c1d9 ;
 }
 
+.lista-geral{
+  list-style:none;
+  padding: 0;
+
+}
+
+/* ======= FORMULÁRIOS ======= */
+
+.barra-principal{
+  padding: 20px;
+  margin:20px auto;
+  position: relative;
+  background-color:#ffff;
+  border-radius: 20px;
+  max-width: 650px;
+  
+}
 

@@ -49,14 +49,14 @@
 <body>
  <!--header-->
  <?php include_once("_include/header.php"); ?>
-    <main>
+    <main class="principal container-fluid">
         <div class="titulo-central">
             <h1>Configurações - Todos os Livros</h1>
         </div>
-        <div id="caixa-lista" class="table-responsive">
-            <form id="pesquisar-livros" action="todos-livros.php" method="get" class="input-group mb-3" >
+        <div id="caixa-lista" class="table-responsive row row-cols-1 row-cols-md-1 mb-1 uk-card uk-card-default">
+            <form id="pesquisar-livros" action="todos-livros.php" method="get" class="input-group mb-3 barra-pesquisa" >
                 <input type="text" class="form-control" name="pesquisa_livro" placeholder="Pesquisar Livros ou Autores" aria-label="Pesquisar Livros" aria-describedby="button-addon2">
-                <button type="input" name="botao" class="btn btn-outline-secondary" id="button-addon2" >Pesquisar</button>
+                <button type="input" name="botao" class="btn btn-primary" id="button-addon2" >Pesquisar</button>
             </form>
             <table class="table" id="lista-livros">
                 <thead>

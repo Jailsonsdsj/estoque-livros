@@ -2,7 +2,8 @@
 <?php require_once("private/seguranca.php"); ?>
 <?php require_once("_include/selects.php"); ?>
 <?php
-
+    $aviso = false;
+   
     //COLETANDO INFORMAÇÕES DO FORMULÁRIO
     if (isset($_POST["titulo-livro"])){
         $titulo     = $_POST["titulo-livro"];
@@ -18,13 +19,16 @@
         $capa       = $_POST["enviar-capa"];
         $descricao  = $_POST["descricao-livro"];
         $amazon     = $_POST["link-amazon"];
-
+        
         //INSERINDO DADOS NO BD
         $cadastro_livros =  "INSERT INTO livros (idlivros,titulo,autor,id_genero,id_editora,id_tipo,isbn,preco,estoque,descricao,imagem,id_idioma,paginas,amazon) VALUES (null,'$titulo','$autor',$genero,$editora,$tipo,'$isbn','$preco','$estoque','$descricao','$capa','$idioma','$paginas','$amazon')";
 
         $operacao_inserir = mysqli_query($conecta,$cadastro_livros);
         if (!$operacao_inserir){
             die("Falha ao cadastrar o livro");
+        }else{
+            $aviso = true;
+            header('Location: ' . $_SERVER['REQUEST_URI']); 
         }
     }
     
@@ -53,36 +57,27 @@
     <!--header-->
     <?php include_once("_include/header.php"); ?>
 
-    <main class= "container-fluid">
-        <div id="titulo_configuracoes">
-            <h1>Cadastrar Livros</h1>
+    <main class= "principal container-fluid">
+        <div class="titulo-central">
+            <h2>Cadastrar Livros</h2>
            
         </div>
-        <?php
-            if(isset($operacao_inserir)){
-        ?>
-            <!--SUBSTITUIR O ALERT POR UMA MENSAGEM NO PRÓXIMO FORMULÁRIO-->
-           <script>alert("Livro cadastrado com sucesso!");</script>
-
-        <?php
-            }
-        ?>
-        
-        <div id="cadastro-livro" class="box-container ">
+  
+        <div id="cadastro-livro" class="box-container uk-card uk-card-default ">
             <!--IMPORTANTE: FALTA INSERIR O VALIDADOR DE FORMULÁRIOS VIA JAVASCRIPT-->
             <form id="fomulario-cadastro-livro" class= "box-content" action="cadastro-livro.php" method="post" >
                 <div class="mb-3" id="div-titulo-livro">
                     <label for="titulo-livro" class="form-label"><p>Título:</p></label>
-                    <input type="text" name="titulo-livro" id="titulo-livro"  class="form-control" placeholder="Ex.: A Divina Comédia" aria-label="Ex.: A Divina Comédia">
+                    <input type="text" name="titulo-livro" id="titulo-livro"  class="form-control">
                 </div>
 
                 <div class="coluna">
-                    <div class="mb-3" id="campo1">
-                        <label for="autor-livro" class="form-label"><p>Autor:</p></label>
-                        <input id="autor-livro" name="autor-livro" class="form-control" type="text" placeholder="Ex.: Dante Alighieri " aria-label="Ex.: Dante Alighieri">
+                    <div class="mb-3 campo1">
+                        <label for="autor-livro" class="form-label"><p>Autor(a):</p></label>
+                        <input id="autor-livro" name="autor-livro" class="form-control" type="text" >
                     </div>
 
-                    <div class="mb-3" id="campo2">
+                    <div class="mb-3 campo2">
                         <label for="preco-livro" class="form-label"><p>Preço:</p></label>
                         <input id="preco-livro" name="preco-livro" class="form-control" type="text" placeholder="R$: " aria-label="R$: ">
                     </div>
@@ -190,7 +185,7 @@
                     <textarea id="descricao-livro" name="descricao-livro" class="form-control" type="text" maxlength="500"> </textarea>
                 </div>
 
-                <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-outline-secondary " id="botao-cadastrar" style="margin-top:20px;" ></input>
+                <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary " id="botao-cadastrar" style="margin-top:20px;" ></input>
 
             </form>
         </div>

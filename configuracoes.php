@@ -17,32 +17,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <style>
+        a{
+            text-decoration:none;
+        }
+        
+    </style>
     <title>Configurações</title>
 </head>
 <body>
     <!--header-->
     <?php include_once("_include/header.php"); ?>
 
-    <main class= "container-fluid">
-        <div id="titulo_configuracoes">
+    <main class= "principal container-fluid">
+        <div class="titulo-central">
             <h2>Painel de Controle do Administrador</h2>
             <hr>
         </div>
 
-        <div class="container_configuracoes">
-            <div class="painel_configuracoes">
-                <h4> Configurações dos Livros</h4>
-                <ul>
+        <div class="container_configuracoes row row-cols-1 row-cols-md-1 mb-1">
+            
+            <div class="painel_configuracoes col uk-card uk-card-default">
+                <h4 class="titulo-painel-configuracoes"> Configurações dos Livros</h4>
+                <ul class="lista-geral">
                     <li><a href="#">Alterar Informações</a></li>
                     <li><a href="cadastro-livro.php">Cadastrar Livro</a></li>
+                    <li><a href="#">Tipo / Formato</a></li>
                     <li><a href="todos-livros.php">Todos os Livros</a></li>
                 </ul>
             </div>
-            <div>
-                
 
+            <div class="painel_configuracoes col uk-card uk-card-default">
+                <h4 class="titulo-painel-configuracoes">Editoras</h4>
+                <ul class="lista-geral">
+                    <li><a href="cadastro-editora.php">Cadastrar Editora</a></li>
+                    <li><a href="todas-editoras.php">Todas as Editoras</a></li>
+                </ul>
             </div>
+
         </div>
+       
     </main>
 </body>
 </html>

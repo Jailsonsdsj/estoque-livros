@@ -98,7 +98,7 @@
 
     <main class= "container-fluid">
         <div class="titulo-central">
-            <h1>Alterar Livro</h1>
+            <h2>Alterar Livro</h2>
         </div>
         
         
@@ -273,7 +273,7 @@
                     <textarea id="descricao-livro" name="descricao-livro" class="form-control" type="text" maxlength="10000" value=""><?php echo $dados_livro["descricao"];?> </textarea>
                 </div>
 
-                <input type="submit" name="Alterar" value="Alterar" class="btn btn-outline-secondary " id="botao-cadastrar" style="margin-top:20px;" ></input>
+                <input type="submit" name="Alterar" value="Alterar" class="btn btn-primary " id="botao-cadastrar" style="margin-top:20px;" ></input>
                 
                 <!--CAMPO DE ID OCULTO-->
                 <input type="hidden" name="livroId" value="<?php echo $dados_livro["idlivros"]; ?>">

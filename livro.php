@@ -59,15 +59,12 @@
 
     <main id="main-livro" class="container-fluid">
     
-        <div class="caixa-detalhe row row-cols-1 row-cols-md-3 mb-3">
+        <div class="caixa-detalhe row row-cols-1 row-cols-md-3 mb-3 uk-card uk-card-default">
         
-            <div class=" container_imagem col">
+            <div class="container_imagem col">
             <div id="alteracao-livro" method="post"><p>
                 <a href="alterar-livro.php?codigo=<?php echo $idlivros ?>">Alterar Informações</a> |
-                <a id="exclusao-livro" href="livro.php?codigo=<?php echo $idlivros ?>" >Excluir Livro </a>
-
-                
-                
+                <a id="exclusao-livro" href="livro.php?codigo=<?php echo $idlivros ?>" >Excluir Livro </a>  
                 </div>
                 <img class="img-fluid " src="<?php echo $imagem ?>">
                 </p></div>
@@ -75,7 +72,7 @@
             <div class="container_detalhes col">
             
                 <div id="blocoA"> 
-                    <ul>
+                    <ul class="lista-geral">
                         <li><h2><?php echo $titulo ?></h2></li>
                         <hr style="width:93%">
                         <li>Autor(a): <?php echo $autor ?> </li>
@@ -84,7 +81,7 @@
                     </ul>
                 </div>
                 <div id="blocoB">
-                    <ul>
+                    <ul class="lista-geral">
                         <li>Gênero: <?php echo $genero ?></li>
                         <li>Editora: <?php echo $editora ?> </li>
                         <li>Tipo: <?php echo $tipo ?> </li>
@@ -104,10 +101,12 @@
                
             </div>             
         </div>  
+
+
         
     </main>
     <footer>
-       
+
     </footer>
 
 
