@@ -23,18 +23,6 @@ header{
   justify-content: space-around;
 }
 
-#logo{
-  font-family: 'Pacifico', cursive !important;
-  color:#ffff;
-  margin: 0 0 0 5%;
-  text-decoration:none;
-  width: 100%;
-}
-
-#logo a{
-  text-decoration: none;
-  
-}
 
 header, .painel_usuario{
   height: 60px;
@@ -67,7 +55,7 @@ aside a#configuracoes, a#meu_perfil{
   
 }
 
-aside #botao_sair{
+#botao_sair{
   padding-top: 3px;
   text-align: center;
   float:right;
@@ -79,8 +67,7 @@ aside #botao_sair{
   margin-left: 10px;
   
 }
-
-aside a #botao_sair {
+ a #botao_sair {
   text-decoration:none;
   color: #ffff;
 }
@@ -96,6 +83,24 @@ aside #botao_sair:hover{
   
 }
 
+
+
+.botao-menu-mobile{
+  display:none;
+}
+
+
+@media (max-width: 767px){
+  .painel_usuario{display:none;}
+
+  .botao-menu-mobile{
+    display:inherit;
+    
+    
+  }
+
+
+}
 
 /*INICIO*/
 
@@ -156,9 +161,8 @@ body{
   background-color:#ffff;
   padding: 2%;
   min-width: 150px;
-  min-height: 200px;
   max-width: 350px;
-  max-height: 400px;
+  height:auto;
   margin: 20px;
 
 }
@@ -166,6 +170,8 @@ body{
 .titulo-painel-configuracoes{
   margin-bottom:20px;
 }
+
+
 
 /*TELA DE DETALHES DO LIVRO*/
 

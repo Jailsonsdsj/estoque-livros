@@ -85,24 +85,27 @@
                     </div>
                     
                 </div>     
-            
+                
             <?php
                 }//fechamento da chave
             ?>
 
         </div>
-
+       
     </main>
-
+    <footer>    
+      
+    </footer>
     
 </body>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="uikit/js/uikit.min.js"></script>
+<script src="uikit/js/uikit.js"></script>
+<script src="uikit/js/uikit-icons.js"></script>
+<script src="uikit/js/uikit-icons.min.js"></script>
 </html>
 
-<script src="uikit\js\uikit.min.js"></script>
-<script src="uikit\js\uikit.js"></script>
-<script src="uikit\js\uikit-icons.js"></script>
-<script src="uikit\js\uikit-icons.min.js"></script>
+
 <?php
     mysqli_close($conecta);
 ?>

@@ -40,9 +40,9 @@
             <div class="painel_configuracoes col uk-card uk-card-default">
                 <h4 class="titulo-painel-configuracoes"> Configurações dos Livros</h4>
                 <ul class="lista-geral">
-                    <li><a href="#">Alterar Informações</a></li>
+                    <li>Alterar Informações</li>
                     <li><a href="cadastro-livro.php">Cadastrar Livro</a></li>
-                    <li><a href="#">Tipo / Formato</a></li>
+                    <li>Tipo / Formato</li>
                     <li><a href="todos-livros.php">Todos os Livros</a></li>
                 </ul>
             </div>
@@ -52,6 +52,22 @@
                 <ul class="lista-geral">
                     <li><a href="cadastro-editora.php">Cadastrar Editora</a></li>
                     <li><a href="todas-editoras.php">Todas as Editoras</a></li>
+                </ul>
+            </div>
+
+            <div class="painel_configuracoes col uk-card uk-card-default">
+                <h4 class="titulo-painel-configuracoes">Gêneros</h4>
+                <ul class="lista-geral">
+                    <li><a href="cadastro-genero.php">Cadastrar Gênero</a></li>
+                    <li><a href="todos-generos.php">Todos os Gêneros</a></li>
+                </ul>
+            </div>
+
+            <div class="painel_configuracoes col uk-card uk-card-default">
+                <h4 class="titulo-painel-configuracoes">Idiomas</h4>
+                <ul class="lista-geral">
+                    <li><a href="cadastro-idioma.php">Cadastrar Idiomas</a></li>
+                    <li><a href="todos-idiomas.php">Todos os Idiomas</a></li>
                 </ul>
             </div>
 

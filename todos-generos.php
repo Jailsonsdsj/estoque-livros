@@ -4,16 +4,16 @@
 <?php 
     setlocale(LC_ALL, 'pt_BR');
 
-    $consulta_lista_editoras = " SELECT * FROM editora " ;
-    if (isset($_GET['pesquisa_editora'])){
-        $pesquisa = $_GET["pesquisa_editora"];
-        $consulta_lista_editoras .= " WHERE nome LIKE '%{$pesquisa}%' ";
+    $consulta_lista_generos = " SELECT * FROM genero " ;
+    if (isset($_GET['pesquisa_genero'])){
+        $pesquisa = $_GET["pesquisa_genero"];
+        $consulta_lista_generos .= " WHERE nome LIKE '%{$pesquisa}%' ";
     }
-    $consulta_lista_editoras .= " ORDER BY nome ASC ";
+    $consulta_lista_generos .= " ORDER BY nome ASC ";
 
   
-    $extrato_todas_editoras = mysqli_query($conecta, $consulta_lista_editoras);
-    if (!$extrato_todas_editoras){
+    $extrato_todas_generos = mysqli_query($conecta, $consulta_lista_generos);
+    if (!$extrato_todas_generos){
         die("Falha na consulta ao banco de dados");
     }
     
@@ -31,26 +31,25 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     
-    <title> Todas as Editoras | Livraria Estante</title>
+    <title> Configurações - Todos os gêneros | Livraria Estante</title>
 </head>
 <body>
  <!--header-->
  <?php include_once("_include/header.php"); ?>
     <main class="principal container-fluid">
         <div class="titulo-central">
-            <h1>Todas as Editoras</h1>
+            <h2>Todos os Gêneros</h2>
         </div>
         <div id="caixa-lista" class="table-responsive row row-cols-1 row-cols-md-1 mb-1 uk-card uk-card-default">
-            <form id="pesquisar-editoras" action="todas-editoras.php" method="get" class="input-group mb-3 barra-pesquisa" >
-                <input type="text" class="form-control" name="pesquisa_editora" placeholder="Pesquisar por editora" aria-label="Pesquisar Livros" aria-describedby="button-addon2">
+            <form id="pesquisar-generos" action="todos-generos.php" method="get" class="input-group mb-3 barra-pesquisa" >
+                <input type="text" class="form-control" name="pesquisa_genero" placeholder="Pesquisar gênero" aria-label="Pesquisar gênero" aria-describedby="button-addon2">
                 <button type="input" name="botao" class="btn btn-primary" id="button-addon2" >Pesquisar</button>
             </form>
             <table class="table" id="lista-livros">
                 <thead>
                     <tr id="coluna-tabela">
                     <th id="coluna-id" scope="col">ID</th>
-                    <th id="coluna-titulo" scope="col">Nome</th>
-                    <th id="coluna-autor" scope="col">CNPJ</th>
+                    <th id="coluna-titulo" scope="col">Gênero</th>
                     <th id="coluna-alterar" scope="col"></th>
                     <th id="coluna-excluir" scope="col"></th>
 
@@ -59,18 +58,15 @@
                 <tbody>
                 <?php 
                     
-                    while($lista_editoras = mysqli_fetch_assoc($extrato_todas_editoras)){         
+                    while($lista_generos = mysqli_fetch_assoc($extrato_todas_generos)){         
                 ?>
-                    <form action="todos-editoras.php" method="post">
+                    <form action="todos-generos.php" method="post">
                         <tr id="linha-tabela">
-                            <th scope="row"><?php echo $lista_editoras["ideditora"]; ?></th>
+                            <th scope="row"><?php echo $lista_generos["idgenero"]; ?></th>
                             <td id="linha-titulo">
-                                    <?php echo $lista_editoras["nome"]; ?>
+                                    <?php echo $lista_generos["nome"]; ?>
                                 </td>
-                            <td id="linha-autor">
-                                    <?php echo $lista_editoras["cnpj"]; ?>
-                                </td>
-                            
+                            <td><a href="#" uk-toggle>Alterar</a> </td>
                             <td><a href="#" uk-toggle>Excluir</a> </td>
                         </tr>
                        
