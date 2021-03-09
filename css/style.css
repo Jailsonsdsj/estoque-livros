@@ -6,8 +6,12 @@
 
 /*INDEX*/
 
+body,html{
+  background-color:#f1faee;
+}
 main,body,h1,h2{
   font-family: 'Lato', sans-serif !important;
+  
 }
 
 .container-fluid{
@@ -104,6 +108,53 @@ aside #botao_sair:hover{
 }
 
 /*TELA DE LOGIN*/
+
+.tela-login{
+  height: 400px;
+  background-color: #f1faee;
+}
+
+#fomulario-login{
+  margin: 10% auto;
+  padding:1% 0;
+  width: 50%;
+  height: auto;
+}
+#login-email, 
+#login-senha{
+  width: 60%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+#botao-entrar{
+  text-align:center;
+}
+#botao-registrar{
+  margin:40px 0;
+  text-align:center;
+
+  
+}
+#botao-registrar a{
+  text-decoration:none;
+}
+
+#botao-registrar h5:hover{
+  color:dodgerblue;
+}
+
+@media(max-width:750px ){
+  #login-email,#login-senha{width: 60%;}
+  #fomulario-login{width: 80%;}
+  
+
+}
+@media(max-width: 400px){
+  #login-email,#login-senha{width: 70%;} 
+  #fomulario-login{width: 90%;}
+}
+
 
 
 

@@ -62,19 +62,22 @@
         <main class="tela-login">  
             <div >
                
-                <form action="login.php" method="post">
+                <form id="fomulario-login" class="uk-card uk-card-default" action="login.php" method="post">
                     <h2 class="titulo-central">Login</h2>
-
-                    <div class="mb-3" >
+                    <div class="mb-3 formulario-login" >
+                    
                         <input type="text" name="email" id="login-email"  class="form-control" placeholder="E-mail">
-                     </div>
-
-                     <div class="mb-3">
+            
                         <input type="password" name="senha" id="login-senha"  class="form-control" placeholder="Senha">
                      </div>
 
-                    
-                    <input type="submit" value='Entrar' action="logout.php" class="btn btn-primary">
+                     <div id="botao-entrar" class="mb-3">
+                        <span style="margin-right: 2%;"><a href="#"> Esqueci a senha</a></span>
+                        <span> <input type="submit"  value='Entrar' action="logout.php" class="btn btn-primary"> </span>
+                        
+                     </div>
+                     <div id="botao-registrar"><a href="#"><h5>Registrar-se</h5></a></div>
+                        
                     <?php
                     if(isset($mensagem)){
                 ?>
