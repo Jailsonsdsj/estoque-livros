@@ -182,7 +182,7 @@
                 </div>
                <div class="mb-3">
                     <label for="descricao-livro" class="form-label"><p>Descrição:</p></label>
-                    <textarea id="descricao-livro" name="descricao-livro" class="form-control" type="text" maxlength="500"> </textarea>
+                    <textarea id="descricao-livro" name="descricao-livro" class="form-control" type="text"> </textarea>
                 </div>
 
                 <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary " id="botao-cadastrar" style="margin-top:20px;" ></input>

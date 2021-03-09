@@ -4,8 +4,8 @@
 <?php
     session_start();
 
-    if (isset($_POST["usuario"])){
-        $usuario = $_POST["usuario"];
+    if (isset($_POST["email"])){
+        $usuario = $_POST["email"];
         $senha = $_POST["senha"];
 
         $login = " SELECT * FROM usuarios WHERE usuario = '{$usuario}' and senha = '{$senha}' ";
@@ -35,25 +35,46 @@
 
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Curso PHP Integração com MySQL</title>
-        
-        <!-- estilo -->
-        <link href="uikit\css\uikit.css" rel="stylesheet">
-        <link href="css/login.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <link href="uikit\css\uikit.css" rel="stylesheet">
+    <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link href="css\style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>Login | Livraria Estante</title>
+    
+   
+</head>
 
-    </head>
-
-    <body>   
-        <main>  
-            <div id="janela_login">
-                <!--necessário usar o moethod post, pois o GET exibe as informações na barra de endereço-->
+<body>  
+    <header>
+        <span>
+            <a style="text-decoration:none;" href="inicio.php">
+                <img src="img/logo.png" class="img-fluid" alt="Início">
+            </a>
+        </span>
+    
+    </header>
+    
+        <main class="tela-login">  
+            <div >
+               
                 <form action="login.php" method="post">
-                    <h2>Tela de Login</h2>
-                    <input type="text" name="usuario" placeholder="Usuário">
-                    <input type="password" name="senha" placeholder="Senha" >
-                    <input type="submit" value='Login' action="logout.php">
+                    <h2 class="titulo-central">Login</h2>
+
+                    <div class="mb-3" >
+                        <input type="text" name="email" id="login-email"  class="form-control" placeholder="E-mail">
+                     </div>
+
+                     <div class="mb-3">
+                        <input type="password" name="senha" id="login-senha"  class="form-control" placeholder="Senha">
+                     </div>
+
+                    
+                    <input type="submit" value='Entrar' action="logout.php" class="btn btn-primary">
                     <?php
                     if(isset($mensagem)){
                 ?>
