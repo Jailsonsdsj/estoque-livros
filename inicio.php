@@ -39,7 +39,7 @@
 
     
 
-    <title>Consulta de Livros</title>
+    <title>Página Inicial | Livraria Estante</title>
 </head>
 <body>
     <!--header-->
@@ -55,7 +55,7 @@
         </form>
     
         <div class="titulo-grupo">
-                <h2 class="subtitulo">Todos os livros</h2>
+                <h2 class="subtitulo">Livros em Destaque</h2>
                 <hr>
         </div>
         <div class="grupo-livros row row-cols-1 row-cols-md-1 mb-1">
@@ -93,9 +93,8 @@
         </div>
        
     </main>
-    <footer>    
-      
-    </footer>
+    <!--footer-->
+    <?php include_once("_include/footer.php"); ?>
     
 </body>
 <script src="bootstrap/js/bootstrap.min.js"></script>

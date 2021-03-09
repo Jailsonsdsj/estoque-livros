@@ -283,6 +283,8 @@
     
       
     </main>
+    <!--footer-->
+    <?php include_once("_include/footer.php"); ?>
 </body>
 </html>
 

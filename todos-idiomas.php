@@ -40,11 +40,12 @@
         <div class="titulo-central">
             <h2>Todos os Idiomas</h2>
         </div>
-        <div id="caixa-lista" class="table-responsive row row-cols-1 row-cols-md-1 mb-1 uk-card uk-card-default">
-            <form id="pesquisar-idiomas" action="todos-idiomas.php" method="get" class="input-group mb-3 barra-pesquisa" >
+        <form id="pesquisar-idiomas" action="todos-idiomas.php" method="get" class="input-group mb-3 barra-pesquisa" >
                 <input type="text" class="form-control" name="pesquisa_idioma" placeholder="Pesquisar idioma" aria-label="Pesquisar idioma" aria-describedby="button-addon2">
                 <button type="input" name="botao" class="btn btn-primary" id="button-addon2" >Pesquisar</button>
             </form>
+        <div id="caixa-lista" class="table-responsive row row-cols-1 row-cols-md-1 mb-1 uk-card uk-card-default">
+            
             <table class="table" id="lista-livros">
                 <thead>
                     <tr id="coluna-tabela">
@@ -82,7 +83,8 @@
         
         <!--CONFIRMAÇÃO DA EXCLUSÃO-->
     </main>     
-
+    <!--footer-->
+    <?php include_once("_include/footer.php"); ?>
     
 </body>
 </html>

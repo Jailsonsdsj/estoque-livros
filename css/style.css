@@ -167,6 +167,7 @@ body{
 
 .principal{
   background-color:#f1faee;
+  min-height: 400px;
   
 }
 
@@ -482,6 +483,35 @@ div textarea#descricao-livro{
 div a#cancelar-exclusao{
   text-decoration:none;
 }
+
+/*FOOTER*/
+footer{
+  background-color:#293241;
+  color:#ffff;
+  height:90px;
+  width:100%;
+  margin-top:100px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  position:relative;
+  
+}
+
+#lista-contato{
+  text-align: center;
+ 
+}
+#lista-contato ul li{
+  margin: 5px 0;
+}
+#lista-contato ul li a{
+  margin: 0 5px;
+}
+
+
+
 
 /*============== PADRÕES ==============*/
 

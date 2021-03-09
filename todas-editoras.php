@@ -40,11 +40,12 @@
         <div class="titulo-central">
             <h1>Todas as Editoras</h1>
         </div>
-        <div id="caixa-lista" class="table-responsive row row-cols-1 row-cols-md-1 mb-1 uk-card uk-card-default">
-            <form id="pesquisar-editoras" action="todas-editoras.php" method="get" class="input-group mb-3 barra-pesquisa" >
+        <form id="pesquisar-editoras" action="todas-editoras.php" method="get" class="input-group mb-3 barra-pesquisa" >
                 <input type="text" class="form-control" name="pesquisa_editora" placeholder="Pesquisar por editora" aria-label="Pesquisar Livros" aria-describedby="button-addon2">
                 <button type="input" name="botao" class="btn btn-primary" id="button-addon2" >Pesquisar</button>
             </form>
+        <div id="caixa-lista" class="table-responsive row row-cols-1 row-cols-md-1 mb-1 uk-card uk-card-default">
+            
             <table class="table" id="lista-livros">
                 <thead>
                     <tr id="coluna-tabela">
@@ -86,7 +87,8 @@
         
         <!--CONFIRMAÇÃO DA EXCLUSÃO-->
     </main>     
-
+    <!--footer-->
+    <?php include_once("_include/footer.php"); ?>
     
 </body>
 </html>
