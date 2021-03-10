@@ -15,8 +15,8 @@ O site pode ser caracterizado como um e-comerce de livros inspirado no site da A
 ## Credenciais de acesso
 
 - Link do site: http://potifoliolivrariaestante.epizy.com/
-- Login: admin1
-- Senha: 123 
+- Login: zac
+- Senha: zac
 
 
 
