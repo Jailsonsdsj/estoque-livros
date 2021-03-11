@@ -26,6 +26,7 @@ header{
   width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 
@@ -92,8 +93,13 @@ aside #botao_sair:hover{
 
 .botao-menu-mobile{
   display:none;
+  height: 50px;
+  border: none;
 }
 
+#icone-menu{
+
+}
 
 @media (max-width: 767px){
   .painel_usuario{display:none;}
@@ -110,12 +116,12 @@ aside #botao_sair:hover{
 /*TELA DE LOGIN*/
 
 .tela-login{
-  height: 400px;
+  min-height: 400px;
   background-color: #f1faee;
 }
 
 #fomulario-login{
-  margin: 10% auto;
+  margin: 5% auto;
   padding:1% 0;
   width: 50%;
   height: auto;
@@ -144,6 +150,13 @@ aside #botao_sair:hover{
   color:dodgerblue;
 }
 
+.erro_login{
+  color:red;
+  text-align:center;
+  font-size:12px;
+  margin-top:5px;
+}
+
 @media(max-width:750px ){
   #login-email,#login-senha{width: 60%;}
   #fomulario-login{width: 80%;}
@@ -159,7 +172,7 @@ aside #botao_sair:hover{
 
 
 
-/*INICIO*/
+/*INDEX*/
 
 body{
   background-color: #f1faee;
@@ -180,22 +193,26 @@ body{
 
 .grupo-livros{
   margin: 2%;   
+  text-align:center;
   
 }
 
 .caixa-livro{
   padding: 2%;
   min-width: 150px;
+  max-width: 180px;
   min-height: 200px;
-  max-width: 15%;
-  max-height: 400px;
+  height:auto;
   text-align: center;
-  margin: 1% 2%;
+  margin: 1%;
   
 }
 
 
-@media(max-width: 366px){
+
+
+
+@media(max-width: 375px){
   .grupo-livros{
     display: flex;
     justify-content: center;

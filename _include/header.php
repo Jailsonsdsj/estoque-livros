@@ -7,7 +7,7 @@
 
 <header>
     <span>
-        <a style="text-decoration:none;" href="inicio.php">
+        <a style="text-decoration:none;" href="index.php">
             <img src="img/logo.png" class="img-fluid" alt="Início">
         </a>
     </span>
@@ -23,7 +23,7 @@
         </div>
     </aside>
     <span>
-        <img src="img/teste.svg"  class="botao-menu-mobile uk-button uk-button-default" >
+        <img src="img/icone-menu.svg"  class="botao-menu-mobile uk-button uk-button-default" >
     </span>
     
         <div uk-dropdown>

@@ -5,7 +5,7 @@
         $idlivros = $_GET["codigo"];
     
     }else{
-        header("location: inicio.php");
+        header("location: index.php");
 
     }
 

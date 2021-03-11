@@ -2,9 +2,9 @@
 <?php require_once("private/seguranca.php"); ?>
 <?php require_once("_include/selects.php"); ?>
 <?php
-    $aviso = false;
-   
+    
     //COLETANDO INFORMAÇÕES DO FORMULÁRIO
+
     if (isset($_POST["titulo-livro"])){
         $titulo     = $_POST["titulo-livro"];
         $autor      = $_POST["autor-livro"];
@@ -17,6 +17,9 @@
         $paginas    = $_POST["paginas-livro"];
         $estoque    = $_POST["estoque-livro"];
         $capa       = $_POST["enviar-capa"];
+        if ($capa==""){
+            $capa       = "https://i.imgur.com/ql4zWWC.jpg";
+        }
         $descricao  = $_POST["descricao-livro"];
         $amazon     = $_POST["link-amazon"];
         
@@ -28,7 +31,8 @@
             die("Falha ao cadastrar o livro");
         }else{
             $aviso = true;
-            header('Location: ' . $_SERVER['REQUEST_URI']); 
+           // header('Location: ' . $_SERVER['REQUEST_URI']); 
+           echo $capa;
         }
     }
     

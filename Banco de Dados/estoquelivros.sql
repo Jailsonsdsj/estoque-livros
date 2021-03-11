@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Mar-2021 às 04:56
+-- Tempo de geração: 11-Mar-2021 às 14:00
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.26
 
@@ -158,7 +158,7 @@ CREATE TABLE `livros` (
   `preco` float(6,2) DEFAULT NULL,
   `estoque` int(11) DEFAULT NULL,
   `descricao` varchar(10000) DEFAULT 'Sem descrição',
-  `imagem` varchar(100) DEFAULT NULL,
+  `imagem` varchar(100) DEFAULT 'img\\livros\\sem-img.jpg',
   `paginas` varchar(100) NOT NULL DEFAULT 'Não Informado',
   `amazon` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -296,7 +296,7 @@ ALTER TABLE `idiomas`
 -- AUTO_INCREMENT de tabela `livros`
 --
 ALTER TABLE `livros`
-  MODIFY `idlivros` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `idlivros` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT de tabela `tipo`

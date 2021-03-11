@@ -21,12 +21,12 @@
         //VALIDANDO DADOS
 
         if (empty($credenciais)){
-            $mensagem = "Usuário não cadastrado";
+            $mensagem = "Login ou senha incorreto";
 
         }else{
 
             $_SESSION["usuario_portal"] = $credenciais["nome"];
-            header("location:inicio.php");
+            header("location:index.php");
         }
 
     }
@@ -52,7 +52,7 @@
 <body>  
     <header>
         <span>
-            <a style="text-decoration:none;" href="inicio.php">
+            <a style="text-decoration:none;" href="index.php">
                 <img src="img/logo.png" class="img-fluid" alt="Início">
             </a>
         </span>
@@ -69,8 +69,17 @@
                         <input type="text" name="email" id="login-email"  class="form-control" placeholder="E-mail">
             
                         <input type="password" name="senha" id="login-senha"  class="form-control" placeholder="Senha">
-                     </div>
-
+                        <?php
+                        if(isset($mensagem)){
+                        ?>
+                            <div class="erro_login">
+                                <p> <?php echo $mensagem ?></p>
+                            </div>
+                        <?php 
+                            }
+                        ?>
+                    </div>
+                    
                      <div id="botao-entrar" class="mb-3">
                         <span style="margin-right: 2%;"><a href="#"> Esqueci a senha</a></span>
                         <span> <input type="submit"  value='Entrar' action="logout.php" class="btn btn-primary"> </span>
@@ -78,15 +87,7 @@
                      </div>
                      <div id="botao-registrar"><a href="#"><h5>Registrar-se</h5></a></div>
                         
-                    <?php
-                    if(isset($mensagem)){
-                ?>
-                    <div class="erro_login">
-                        <p> <?php echo $mensagem ?></p>
-                    </div>
-                <?php 
-                    }
-                ?>
+               
                 </form>
 
                 
